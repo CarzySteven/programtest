@@ -7,19 +7,21 @@ class registerdata extends CI_Controller {
  	}
 	
  	function insertValues(){
-		$this->load->model("message_db");
+		$this->load->model("check");
 		$this->load->helper('url');
-
 		$newRow = $_POST;
-		print_r($newRow);
-		exit();
-		$newRow['birth'] = date("Y-m-d H:i:s");
+		$data=$this->check->readitem($newRow);
+		if($data[0]->id == $newRow['id'] || 
+		   $data[0]->username == $newRow['username'] ||
+		   $data[0]->email == $newRow['email']){
+		redirect('register', 'location');	
+		}
+		else{
+		$this->load->model("message_db");
 		$this->message_db->insertregister($newRow);
-		redirect('login', 'location');
-
+		redirect('login', 'location');	
+		}
 	}
-
-	
 }
 
 	

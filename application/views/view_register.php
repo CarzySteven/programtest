@@ -19,6 +19,8 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link href="<?php echo $this->config->base_url('assets/css/bootstrap-responsive.css');?>" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $this->config->base_url('assets/css/bootstrap.css');?>" type="text/css" rel="stylesheet" />
+
     <!-- CSS -->
 
 
@@ -32,8 +34,8 @@
       }
 
       .form-signin {
-        max-width: 300px;
-        padding: 19px 29px 29px;
+        max-width: 400px;
+        padding: 15px 15px 15px;
         margin: 0 auto 20px;
         background-color: #fff;
         border: 1px solid #e5e5e5;
@@ -121,6 +123,7 @@
             <div class="controls">
                 <button type="submit" class="btn">送出</button>
                 <button type="reset" class="btn">清除</button>
+                <a class="btn " href="/ci/index.php/login">返回</a>
             </div>
         </div>
     </form>
